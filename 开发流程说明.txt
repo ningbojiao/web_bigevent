@@ -1,0 +1,8 @@
+1. 搭建项目结构
+   - 大事件
+     - assets资源文件夹
+     - home
+     - index.html
+     - login.html
+2. 使用Git管理大事件项目
+   - VS Code中打开终端窗口     
