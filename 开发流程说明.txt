@@ -6,3 +6,89 @@
      - login.html
 2. 使用Git管理大事件项目
    - VS Code中打开终端窗口     
+   - cd 大事件
+   - 初始化本地仓库 git init
+   - 将大事件文件夹下面的所有文件放入暂存区 git add .
+   - 提交项目初始化状态 git commit -m "init project"
+   - 清理终端 clear
+   - 创建远程Github仓库 New repository - web_bigevent - Create repository
+   - 远程仓库提供的提交代码
+     git remote add origin git@github.com:ningbojiao/web_bigevent.git
+     git branch -M main
+     git push -u origin main
+   - 刷新远程仓库
+   - 创建一个login功能分支，用于开发登录功能模块, 创建并切换到login分支
+     git checkout -b login  
+3. Live server插件使用
+   - 插件扩展Live server
+   - 设置默认的浏览器为chrome
+   - 右键访问/手工在浏览器打开  http://127.0.0.1:5500/大事件/index.html
+   - 启动和关闭
+     运行Live Server的以后右下角有个Port的小图标，单击就会终止Live server，右键运行网页就会默认启动Live server
+4. 绘制登录和注册页面
+   整体的页面我们采用layui的组件，因此我们需要 http://www.layui.com 查看文档
+   - assets/css/login.css 编写登录样式
+   - login.html 文件引入login.css样式文件
+   step01: login.css中搭建页面整体风格(宽高度、背景) 重点是背景图不够大，需要使用background-size: cover将背景图片强制等比例拉伸
+   step02: login.html中搭建logo页面结构，img标签引入logo，需要有版心样式，因此借鉴layui页面元素，其中layui-main,其中将layui.css中的该类修改为1400px
+   step03: login.html中搭建登录和注册区域结构(宽高度、背景、居中)
+           title-box 头部区域盒子
+           login-box 登录区域盒子
+           reg-box   注册区域盒子
+   step04: login.html中的login-box和reg-box分别添加<a>,绑定在login.js中绑定单击切换事件
+           login.css默认隐藏注册区域盒子 
+   step05: login.html中的login-box中添加layui表单
+           <form class="layui-form" action="">
+              <div class="layui-form-item">
+                  <label class="layui-form-label">输入框</label>
+                  <div class="layui-input-block">
+                      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                  </div>
+              </div>
+           </form> 
+           - 删除<label>
+           - 删除<div class="layui-input-block">,此时<input>就是铺满盒子的
+           用户输入框
+           <div class="layui-form-item">
+              <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+           </div>
+   step06: 同样的以上代码复制为密码输入框，连同外面的div一起单独一行
+   step07: 登录按钮的实现
+           layui按钮：layui-btn-fluid类是通栏显示
+              <button type="button" class="layui-btn layui-btn-fluid">流体按钮（最大化适应）</button>
+           layui表单按钮：查看layui表单
+              <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+           改造为项目按钮：lay-submit属性是提交按钮  layui-btn-normal类是蓝色样式
+              <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>登录</button>  
+   step08: 链接的实现，将<a>也包含在 <div class="layui-form-item">中独立实现
+           <div class="layui-form-item links">
+              <a href="javascript:;" id="link_reg">去注册账号</a>
+           </div>
+           表单控件全部通栏显示后给表单添加左右内边距，添加links标签实现flex布局，居右显示
+   step09: 小图标实现，<i class="layui-icon layui-icon-username"></i>，修饰样式i绝对定位，layui-form-item相对定位
+           input左内边距  
+   step10: 实现表单的校验，在login.html页面中引入layui的js库，那么以上表单的校验就会有效果
+           查看layui-内置模块-表单-表单校验【只需要在表单元素上加上lay-verify="" 属性值即可】
+           而我们的上面复制的<input>如下：
+           <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+           已经添加上了lay-verify="required"必填项校验，单击提交表单没有效果的原因为没有导入assets/lib/layui/layui.all.js
+   step11: 自定义表单校验实现,login.js中编写自定义校验规则，注意第一步显示使用layui.form获取表单对象，再给表单对象添加校验规则
+           使用lay-verify="required|uname"给表单控件添加校验规则时|注意一定要使用英文，否则必填和自定义规则都失效
+   step12: 注册区域盒子中再次确认密码框自定义校验规则，repsw规则。
+   step13: 注册区域盒子中绑定注册提交表单按钮事件，发起ajax请求(POST)
+   step14: 登录区域盒子中绑定登录提交表单按钮事件，发起ajax请求(POST)
+           需要注意的是返回消息中token的认证使用和存储到本地
+   step15: 将基本路径和访问的资源路径URL进行优化,创建baseAPI.js文件，调用$.ajaxPrefilter()方法。如果有问题可以查看jQuery的API
+  
+   git仓库管理
+           打开VS Code的终端管理
+           git status 
+           git branch
+           git add . 
+5. 后台首页
+              
+
+
+                         
+                   
+
