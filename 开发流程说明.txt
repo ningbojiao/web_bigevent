@@ -84,7 +84,15 @@
            打开VS Code的终端管理
            git status 
            git branch
-           git add . 
+           git add .
+           git commit -m "登录注册功能分支完成"
+           本次仓库提交成功
+           git push -u origin login
+           将本地仓库的login分支推送到github中(origin为远程仓库名，login为远程仓库分支名) 
+           git branch 
+           git checkout main
+           git merge login
+
 5. 后台首页
               
 
