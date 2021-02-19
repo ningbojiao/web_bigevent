@@ -3,11 +3,120 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>后台首页</title>
+    <!-- 3. 引入layui的样式文件 -->
+    <link rel="stylesheet" href="assets/lib/layui/css/layui.css">
+    <!-- 10. 引入样式 -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- 12. 使用第三方图标库给项目添加图标：引入图标样式 -->
+    <link rel="stylesheet" href="assets/fonts/iconfont.css">
 </head>
 
-<body>
+<!-- 1. 复制页面结构： layui - 页面元素 - 布局 - 后台布局 - body(shift键) -->
 
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <!-- 5. 将原有的layui 后台布局内容修改为logo图片 -->
+            <div class="layui-logo">
+                <img src="assets/images/logo.png" alt="" width="90px">
+            </div>
+            <!-- 4. 删除头部区域的ul导航部分 -->
+            <!-- 6. 修改个人中心和退出 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <!-- 15. 这里有一个头像区域，我们需要将该头像区域复制一份放置到左侧侧边栏的最上面 -->
+                    <a href="javascript:;" class="userinfo">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <!-- 同步新增文字头像，用于和图片头像的切换 -->
+                        <span class="text-avatar">T</span>
+                        <!-- 修改贤心为个人中心 -->
+                        个人中心
+                    </a>
+                    <!-- 鼠标移动到个人中心提示的菜单栏信息：这里需要引入layui的js文件 -->
+                    <dl class="layui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="">更换头像</a></dd>
+                        <dd><a href="">重置密码</a></dd>
+                    </dl>
+                </li>
+                <!-- 19. 实现退出功能 -->
+                <!-- 修改退了为退出 -->
+                <li class="layui-nav-item">
+                    <a href="javascript:;" id="btnLogout">
+                        <span class="iconfont icon-tuichu"></span>
+                        退出
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 16. 在这里新增头像：将a换为div -->
+                <div class="userinfo">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    <!-- 17. 新增文字头像，如果用户没有上传图片头像，默认显示用户名首字母的文字头像 -->
+                    <span class="text-avatar">T</span>
+                    <!-- 新增span -->
+                    <span id="welcome"></span>
+                </div>
+                <!-- 8. 修改左侧导航栏 -->
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <!-- 11. 给导航的ul添加lay-shrink属性后排它性的显示菜单 layui-页面元素-导航-导航基础属性 shrink [ʃrɪŋk] 收缩 -->
+                <ul class="layui-nav layui-nav-tree" lay-shrink="all">
+                    <!-- 给每一个菜单项添加layui-this类代表选中状态 查看layui-页面元素-导航-看样例  -->
+                    <li class="layui-nav-item layui-this">
+                        <!-- 超链接指定要打开的文件，target指定在对应的iframe中打开 -->
+                        <a href="home/dashboard.html" target="fm">
+                            <span class="iconfont icon-home"></span>首页
+                        </a>
+                    </li>
+                    <!-- 菜单默认展开添加 layui-nav-itemed 的类即可 -->
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
+                        <dl class="layui-nav-child">
+                            <!-- 13. 二级菜单使用layui图标 -->
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类标</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-template-1"></i>文章列表</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i>发布文章</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-file-b"></i>基本资料</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-picture"></i>更换头像</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-set-sm"></i>重置密码</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 14. 修改内容主体区域为iframe，用于显示二级菜单链接的网页, 默认加载后台首页页面 -->
+            <!-- 内容主体区域 -->
+            <iframe name="fm" src="home/dashboard.html" frameborder="0"></iframe>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 9. 修改底部区域内容和样式 -->
+            <!-- 底部固定区域 -->
+            © bigevent.com 专注社会热点事件
+        </div>
+    </div>
+
+    <!-- 2. 将引入的layui.js库和页面脚本删除 -->
+    <!-- 7. 为了显示个人中心的鼠标移动菜单，需要引入layui的js库 -->
+    <script src="assets/lib/layui/layui.all.js"></script>
+
+    <!-- 18. 引入jQuery库 -->
+    <script src="assets/lib/jquery.js"></script>
+    <!-- 引入封装工具js -->
+    <script src="assets/js/baseAPI.js"></script>
+    <!-- 引入index.js -->
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>

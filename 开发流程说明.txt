@@ -1,7 +1,7 @@
 1. 搭建项目结构
    - 大事件
      - assets资源文件夹
-     - home
+     - home后台首页
      - index.html
      - login.html
 2. 使用Git管理大事件项目
@@ -92,9 +92,34 @@
            git branch 
            git checkout main
            git merge login
-
+           git push
 5. 后台首页
-              
+   step01  本地搭建Git功能分支进行功能模块开发
+           cd 大事件
+           git branch  （main）
+           git checkout -b index （新创建index功能分支）
+           git branch  (检查是否创建并切换到了index分支)
+   step02: index.html中参考layui中 页面元素- 布局 - 后台布局(目录) - 新标签页中预览后台布局效果 - 拷贝<body>标签
+   step03: index.html修改页面结构
+           - 删除原来的脚本引入和页面脚本
+           - 引入layui.css样式文件
+           - 删除头部区域的ul导航
+           - layui后台布局区域修改为logo区域
+           - 修改个人中心，子菜单需要引入layui.all.js库
+           - 修改左侧侧边栏
+           - 修改底部区域内容并使用样式美化
+           - 给左侧导航栏添加lay-shrink="all"属性，实现排它展开
+           - 给导航项和退出添加图标（第三方图标span、layui图标i）
+           - 给内容主体区域添加iframe
+             <a href="url" target="fm">
+             <iframe name="fm" src="">
+           - 图片头像和文本头像的切换             
+             <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+             <span class="text-avatar">T</span>
+    step04: 引入jQuery实现退出功能
+
+    git仓库管理
+
 
 
                          

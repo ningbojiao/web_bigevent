@@ -1,0 +1,68 @@
+/* 给后台首页底部进行文本样式修饰 */
+
+.layui-footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* 第三方图标库：给退出、首页、文章管理和个人中心的图标进行修饰 */
+
+.iconfont {
+    margin-right: 8px;
+}
+
+/* layui图标库：给二级菜单都使用layui的图标 */
+
+.layui-icon {
+    margin-right: 8px;
+    margin-left: 24px;
+}
+
+/* 默认内容区域的iframe宽高度不足，因此需要重新设置 */
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* 如果内容区域加载完毕页面后有垂直滚动条多个出现，那么隐藏即可 */
+
+.layui-body {
+    overflow: hidden;
+}
+
+/* 每次刷新页面的时候左侧的导航栏会有一些动画，可以使用以下样式取消 */
+
+a {
+    transition: none !important;
+}
+
+/* 给左侧导航新增的头像区域修饰 */
+
+.userinfo {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+}
+
+/* 只给左侧的侧边栏头像信息div底部添加分隔边框 */
+
+.layui-side-scroll .userinfo {
+    border-bottom: 1px solid #282b33;
+}
+
+/* 这里给新增文字头像做样式 avatar [ˈævətɑː(r)] 头像 */
+
+.text-avatar {
+    /* 这里查看的是原来头像的宽高度 */
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #009688;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 5px;
+    color: #fff;
+    font-weight: 700;
+}
