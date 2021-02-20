@@ -1,0 +1,15 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #f2f3f5;
+    padding: 15px;
+}
+
+/* 修改表单宽度 */
+
+.layui-form {
+    width: 500px;
+}

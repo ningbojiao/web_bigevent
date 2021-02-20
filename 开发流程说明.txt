@@ -116,11 +116,20 @@
            - 图片头像和文本头像的切换             
              <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
              <span class="text-avatar">T</span>
-    step04: 引入jQuery实现退出功能
+   step04: 引入jQuery实现退出功能
 
-    git仓库管理
+   git仓库管理
 
+6. 用户模块开发
+   step01: git checkout -b user 使用git建立user分支
+   step02: 项目根目录下创建user文件夹，存储用户相关的网页（用户信息、用户重置密码和用户更换头像）    
+           assets/css/user 存放以上页面的样式
+           assets/js/user 存放以上页面的脚本
+   step03: 用户信息页和密码重置页面布局：layui - 页面元素 - 面板（卡片） - 表单 - 组合而成，修改即可
+           表单校验、数据回显和提交修改
+   step04: 用户头像裁剪页面布局、样式和行为： https://www.jq22.com 插件库中查找：Cropper插件 
 
+   git仓库管理            
 
                          
                    
