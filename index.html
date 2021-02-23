@@ -19,7 +19,10 @@
         <div class="layui-header">
             <!-- 5. 将原有的layui 后台布局内容修改为logo图片 -->
             <div class="layui-logo">
-                <img src="assets/images/logo.png" alt="" width="90px">
+                <!-- 给logo包含一个a，通过js跳转首页 -->
+                <a href="javascript:location.href='index.html'">
+                    <img src="assets/images/logo.png" alt="" width="90px">
+                </a>
             </div>
             <!-- 4. 删除头部区域的ul导航部分 -->
             <!-- 6. 修改个人中心和退出 -->
@@ -77,9 +80,21 @@
                         <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
                         <dl class="layui-nav-child">
                             <!-- 13. 二级菜单使用layui图标 -->
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类标</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-template-1"></i>文章列表</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i>发布文章</a></dd>
+                            <dd>
+                                <a href="article/articleType.html" target="fm">
+                                    <i class="layui-icon layui-icon-app"></i>文章类别
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="article/articleList.html" target="fm">
+                                    <i class="layui-icon layui-icon-template-1"></i>文章列表
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="article/articlePublish.html" target="fm">
+                                    <i class="layui-icon layui-icon-edit"></i>发布文章
+                                </a>
+                            </dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">

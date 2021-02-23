@@ -1,3 +1,6 @@
+0. 文档接口
+   https://www.showdoc.com.cn/escook?page_id=3707158761215217
+   teacher123/admin1234
 1. 搭建项目结构
    - 大事件
      - assets资源文件夹
@@ -129,8 +132,12 @@
            表单校验、数据回显和提交修改
    step04: 用户头像裁剪页面布局、样式和行为： https://www.jq22.com 插件库中查找：Cropper插件 
 
-   git仓库管理            
+   git仓库管理 
 
-                         
-                   
+7. 文章模块开发
+   step01: git checkout -b article
+   step02: 文章分类列表中的问题是分类列表Id没有关联文章中的cate_id，因此回显数据的时候要注意
+   step03: 文章列表页面中编辑文章可以扩展实现
+   step04: 文章发布页面中cropper可以参见jQuery的插件库
 
+   git仓库管理

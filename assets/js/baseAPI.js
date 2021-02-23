@@ -28,3 +28,10 @@ $.ajaxPrefilter(function (options) {
         }
     }
 });
+
+// 请求发起显示加载图片，请求结束隐藏加载图片
+$(document).ajaxStart(function () {
+    $("#loadingImg").show();
+}).ajaxStop(function () {
+    $('#loadingImg').hide(0);
+});

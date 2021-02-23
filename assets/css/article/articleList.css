@@ -1,0 +1,21 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #f2f3f5;
+    padding: 15px;
+}
+
+/* 默认让加载的图片隐藏 */
+
+#loadingImg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    /* 提高层级 */
+    z-index: 999;
+}
